@@ -6,8 +6,8 @@ resource "aws_alb_target_group" "author" {
 
   health_check = {
     healthy_threshold   = 2
-    unhealthy_threshold = 10
-    interval            = 10
+    unhealthy_threshold = 30
+    interval            = 5
     timeout             = 2
     path                = "/"
   }
@@ -84,7 +84,7 @@ resource "aws_ecs_service" "author" {
 }
 
 resource "aws_iam_role" "author" {
-  name = "${var.env}_iam_for_survey_runner"
+  name = "${var.env}_iam_for_author"
 
   assume_role_policy = <<EOF
 {
