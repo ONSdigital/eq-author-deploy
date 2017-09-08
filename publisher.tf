@@ -10,6 +10,7 @@ resource "aws_alb_target_group" "publisher" {
     interval            = 5
     timeout             = 2
     path                = "/"
+    matcher             = 404
   }
 
   tags {
