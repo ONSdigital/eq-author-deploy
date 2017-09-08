@@ -1,0 +1,21 @@
+[
+  {
+    "name": "author",
+    "image": "${CONTAINER_REGISTRY}/eq-author:${CONTAINER_TAG}",
+    "memoryReservation": 128,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 3000,
+        "hostPort": 0
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "eu-west-1",
+        "awslogs-group": "${LOG_GROUP}"
+      }
+    }
+  }
+]

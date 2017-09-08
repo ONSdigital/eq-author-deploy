@@ -1,0 +1,21 @@
+[
+  {
+    "name": "publisher",
+    "image": "${CONTAINER_REGISTRY}/eq-publisher:${CONTAINER_TAG}",
+    "memoryReservation": 128,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 9000,
+        "hostPort": 0
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "eu-west-1",
+        "awslogs-group": "${LOG_GROUP}"
+      }
+    }
+  }
+]
