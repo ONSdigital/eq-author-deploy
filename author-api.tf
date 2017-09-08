@@ -47,7 +47,7 @@ data "template_file" "author-api" {
     LOG_GROUP          = "${aws_cloudwatch_log_group.author-api.name}"
     CONTAINER_REGISTRY = "${var.docker_registry}"
     CONTAINER_TAG      = "${var.author_api_tag}"
-    DB_CONNECTION_URI  = "postgres://eq-author:eq-author@${aws_db_instance.author_database.address}:5432/author"
+    DB_CONNECTION_URI  = "postgres://author:author@${aws_db_instance.author_database.address}:5432/author"
   }
 }
 
