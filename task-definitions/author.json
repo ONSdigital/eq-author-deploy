@@ -1,0 +1,35 @@
+[
+  {
+    "name": "author",
+    "image": "${CONTAINER_REGISTRY}/eq-author:${CONTAINER_TAG}",
+    "memoryReservation": 128,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 3000,
+        "hostPort": 0
+      }
+    ],
+    "environment": [
+      {
+        "name": "REACT_APP_BASE_NAME",
+        "value": "/eq-author"
+      },
+      {
+        "name": "REACT_APP_USE_MOCK_API",
+        "value": "false"
+      },
+      {
+        "name": "REACT_APP_API_URL",
+        "value": "${AUTHOR_API}/graphql"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "eu-west-1",
+        "awslogs-group": "${LOG_GROUP}"
+      }
+    }
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "author-api",
+    "image": "${CONTAINER_REGISTRY}/eq-author-api:${CONTAINER_TAG}",
+    "memoryReservation": 128,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 4000,
+        "hostPort": 0
+      }
+    ],
+    "environment": [
+      {
+        "name": "DB_CONNECTION_URI",
+        "value": "${DB_CONNECTION_URI}"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "eu-west-1",
+        "awslogs-group": "${LOG_GROUP}"
+      }
+    }
+  }
+]
