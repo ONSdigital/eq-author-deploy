@@ -10,6 +10,20 @@
         "hostPort": 0
       }
     ],
+    "environment": [
+      {
+        "name": "REACT_APP_BASE_NAME",
+        "value": "/eq-author"
+      },
+      {
+        "name": "REACT_APP_USE_MOCK_API",
+        "value": "false"
+      },
+      {
+        "name": "REACT_APP_API_URL",
+        "value": "http://localhost:4000/graphql"
+      }
+    ],
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {

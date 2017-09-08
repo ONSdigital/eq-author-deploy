@@ -19,7 +19,7 @@ resource "aws_alb_target_group" "author-api" {
 
 resource "aws_alb_listener_rule" "author-api" {
   listener_arn = "${var.aws_alb_listener_arn}"
-  priority     = 201
+  priority     = 202
 
   action {
     type             = "forward"
