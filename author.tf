@@ -1,5 +1,5 @@
 resource "aws_alb_target_group" "author" {
-  name     = "${var.env}-sr"
+  name     = "${var.env}-author"
   port     = 80
   protocol = "HTTP"
   vpc_id   = "${data.aws_alb.eq.vpc_id}"
