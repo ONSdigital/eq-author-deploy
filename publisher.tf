@@ -47,6 +47,7 @@ data "template_file" "publisher" {
     LOG_GROUP          = "${aws_cloudwatch_log_group.publisher.name}"
     CONTAINER_REGISTRY = "${var.docker_registry}"
     CONTAINER_TAG      = "${var.publisher_tag}"
+    AUTHOR_API         = "https://${aws_route53_record.author-api.fqdn}"
   }
 }
 
