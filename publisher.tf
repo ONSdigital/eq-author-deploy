@@ -44,9 +44,9 @@ data "template_file" "publisher" {
   template = "${file("${path.module}/task-definitions/publisher.json")}"
 
   vars {
-    LOG_GROUP                            = "${aws_cloudwatch_log_group.publisher.name}"
-    CONTAINER_REGISTRY                   = "${var.docker_registry}"
-    CONTAINER_TAG                        = "${var.publisher_tag}"
+    LOG_GROUP          = "${aws_cloudwatch_log_group.publisher.name}"
+    CONTAINER_REGISTRY = "${var.docker_registry}"
+    CONTAINER_TAG      = "${var.publisher_tag}"
   }
 }
 

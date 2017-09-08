@@ -44,9 +44,10 @@ data "template_file" "author-api" {
   template = "${file("${path.module}/task-definitions/author-api.json")}"
 
   vars {
-    LOG_GROUP                            = "${aws_cloudwatch_log_group.author-api.name}"
-    CONTAINER_REGISTRY                   = "${var.docker_registry}"
-    CONTAINER_TAG                        = "${var.author_api_tag}"
+    LOG_GROUP          = "${aws_cloudwatch_log_group.author-api.name}"
+    CONTAINER_REGISTRY = "${var.docker_registry}"
+    CONTAINER_TAG      = "${var.author_api_tag}"
+    DB_CONNECTION_URI  = "postgres://eq-author:eq-author@${module.author-database.database_address}:5432/eq-author"
   }
 }
 

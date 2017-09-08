@@ -44,3 +44,12 @@ variable "publisher_tag" {
   description = "The tag for the Publisher image to run"
   default     = "latest"
 }
+
+
+
+
+variable "database_cidrs" {
+  type        = "list"
+  description = "CIDR blocks for database subnets"
+  default     = ["10.30.20.96/28", "10.30.20.112/28", "10.30.20.128/28"]
+}

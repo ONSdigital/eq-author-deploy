@@ -10,6 +10,12 @@
         "hostPort": 0
       }
     ],
+    "environment": [
+      {
+        "name": "DB_CONNECTION_URI",
+        "value": "/eq-author"
+      }
+    ],
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
