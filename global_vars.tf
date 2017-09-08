@@ -54,3 +54,7 @@ variable "author_database_password" {
   description = "The password for the Author database"
   default     = "authorPassword"
 }
+
+variable "survey_launcher_url" {
+  description = "The URL for the launcher service"
+}
