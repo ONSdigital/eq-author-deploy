@@ -21,7 +21,7 @@
       },
       {
         "name": "REACT_APP_API_URL",
-        "value": "http://localhost:4000/graphql"
+        "value": "${AUTHOR_API}"
       }
     ],
     "logConfiguration": {

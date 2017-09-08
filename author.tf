@@ -44,9 +44,10 @@ data "template_file" "author" {
   template = "${file("${path.module}/task-definitions/author.json")}"
 
   vars {
-    LOG_GROUP                            = "${aws_cloudwatch_log_group.author.name}"
-    CONTAINER_REGISTRY                   = "${var.docker_registry}"
-    CONTAINER_TAG                        = "${var.author_tag}"
+    LOG_GROUP          = "${aws_cloudwatch_log_group.author.name}"
+    CONTAINER_REGISTRY = "${var.docker_registry}"
+    CONTAINER_TAG      = "${var.author_tag}"
+    AUTHOR_API         = "https://${aws_route53_record.author-api.fqdn}"
   }
 }
 
