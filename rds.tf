@@ -26,7 +26,7 @@ resource "aws_db_instance" "author_database" {
   engine_version              = "9.4.7"
   allow_major_version_upgrade = "false"
   instance_class              = "db.t2.small"
-  name                        = "eq-author"
+  name                        = "author"
   username                    = "eq-author"
   password                    = "eq-author"
   multi_az                    = false
