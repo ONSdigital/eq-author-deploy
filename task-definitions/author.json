@@ -21,7 +21,7 @@
       },
       {
         "name": "REACT_APP_API_URL",
-        "value": "${AUTHOR_API}"
+        "value": "${AUTHOR_API}/graphql"
       }
     ],
     "logConfiguration": {
