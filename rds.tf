@@ -28,7 +28,7 @@ resource "aws_db_instance" "author_database" {
   instance_class              = "db.t2.small"
   name                        = "author"
   username                    = "author"
-  password                    = "author"
+  password                    = "authorPassword"
   multi_az                    = false
   publicly_accessible         = false
   backup_retention_period     = 0
