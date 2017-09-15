@@ -33,7 +33,7 @@ resource "aws_db_instance" "author_database" {
   publicly_accessible         = false
   backup_retention_period     = 0
   db_subnet_group_name        = "staging-eq-rds"
-  vpc_security_group_ids      = ["sg-5d573125"]
+  vpc_security_group_ids      = ["sg-d8785fa0"]
   storage_type                = "gp2"
   apply_immediately           = true
   skip_final_snapshot         = true
