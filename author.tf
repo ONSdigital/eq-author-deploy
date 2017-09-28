@@ -6,7 +6,7 @@ resource "aws_alb_target_group" "author" {
 
   health_check = {
     healthy_threshold   = 2
-    unhealthy_threshold = 10
+    unhealthy_threshold = 20
     interval            = 10
     timeout             = 2
     path                = "/"
