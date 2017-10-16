@@ -16,5 +16,6 @@ module "author" {
   ecs_cluster_name        = "${module.eq-ecs.ecs_cluster_name}"
   aws_alb_listener_arn    = "${module.eq-ecs.aws_alb_listener_arn}"
   application_cidrs       = "${var.application_cidrs}"
+  survey_launcher_url     = "${module.survey-launcher-for-ecs.survey_runner_launcher_address}"
 }
 ```

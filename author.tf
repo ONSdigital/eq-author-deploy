@@ -48,6 +48,8 @@ data "template_file" "author" {
     CONTAINER_REGISTRY = "${var.docker_registry}"
     CONTAINER_TAG      = "${var.author_tag}"
     AUTHOR_API         = "https://${aws_route53_record.author-api.fqdn}"
+    PUBLISHER_URL      = "https://${aws_route53_record.publisher.fqdn}"
+    SURVEY_LAUNCHER_URL = "${var.survey_launcher_url}"
   }
 }
 

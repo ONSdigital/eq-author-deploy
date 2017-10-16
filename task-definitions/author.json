@@ -22,6 +22,14 @@
       {
         "name": "REACT_APP_API_URL",
         "value": "${AUTHOR_API}/graphql"
+      },
+      {
+        "name": "REACT_APP_PUBLISHER_URL",
+        "value": "${PUBLISHER_URL}/publish"
+      },
+      {
+        "name": "REACT_APP_GO_LAUNCH_A_SURVEY_URL",
+        "value": "${SURVEY_LAUNCHER_URL}/quick-launch"
       }
     ],
     "logConfiguration": {
