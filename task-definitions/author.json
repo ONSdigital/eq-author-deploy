@@ -30,6 +30,10 @@
       {
         "name": "REACT_APP_GO_LAUNCH_A_SURVEY_URL",
         "value": "${SURVEY_LAUNCHER_URL}/quick-launch"
+      },
+      {
+        "name": "REACT_APP_USE_FULLSTORY",
+        "value": "true"
       }
     ],
     "logConfiguration": {
