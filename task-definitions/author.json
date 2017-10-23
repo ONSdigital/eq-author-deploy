@@ -34,6 +34,10 @@
       {
         "name": "REACT_APP_USE_FULLSTORY",
         "value": "true"
+      },
+      {
+        "name": "REACT_APP_USE_SENTRY",
+        "value": "true"
       }
     ],
     "logConfiguration": {
