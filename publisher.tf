@@ -9,8 +9,7 @@ resource "aws_alb_target_group" "publisher" {
     unhealthy_threshold = 2
     interval            = 5
     timeout             = 2
-    path                = "/"
-    matcher             = 404
+    path                = "/status"
   }
 
   tags {
