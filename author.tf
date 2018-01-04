@@ -9,7 +9,7 @@ resource "aws_alb_target_group" "author" {
     unhealthy_threshold = 10
     interval            = 30
     timeout             = 2
-    path                = "/"
+    path                = "/status.json"
   }
 
   tags {
