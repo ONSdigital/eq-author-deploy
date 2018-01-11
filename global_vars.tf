@@ -58,3 +58,23 @@ variable "author_database_password" {
 variable "survey_launcher_url" {
   description = "The URL for the launcher service"
 }
+
+variable "enable_auth" {
+  description = "Whether to enable authentication"
+  default     = "true"
+}
+
+variable "firebase_project_id" {
+  description = "The Firebase authentication project id"
+  default     = ""
+}
+
+variable "firebase_api_key" {
+  description = "The Firebase authentication API key"
+  default     = ""
+}
+
+variable "firebase_messaging_sender_id" {
+  description = "The Firebase authentication sender id"
+  default     = ""
+}

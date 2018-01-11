@@ -44,12 +44,16 @@ data "template_file" "author" {
   template = "${file("${path.module}/task-definitions/author.json")}"
 
   vars {
-    LOG_GROUP          = "${aws_cloudwatch_log_group.author.name}"
-    CONTAINER_REGISTRY = "${var.docker_registry}"
-    CONTAINER_TAG      = "${var.author_tag}"
-    AUTHOR_API         = "https://${aws_route53_record.author-api.fqdn}"
-    PUBLISHER_URL      = "https://${aws_route53_record.publisher.fqdn}"
-    SURVEY_LAUNCHER_URL = "${var.survey_launcher_url}"
+    LOG_GROUP                    = "${aws_cloudwatch_log_group.author.name}"
+    CONTAINER_REGISTRY           = "${var.docker_registry}"
+    CONTAINER_TAG                = "${var.author_tag}"
+    AUTHOR_API                   = "https://${aws_route53_record.author-api.fqdn}"
+    PUBLISHER_URL                = "https://${aws_route53_record.publisher.fqdn}"
+    SURVEY_LAUNCHER_URL          = "${var.survey_launcher_url}"
+    ENABLE_AUTH                  = "${var.enable_auth}"
+    FIREBASE_PROJECT_ID          = "${var.firebase_project_id}"
+    FIREBASE_API_KEY             = "${var.firebase_api_key}"
+    FIREBASE_MESSAGING_SENDER_ID = "${var.firebase_messaging_sender_id}"
   }
 }
 
