@@ -78,3 +78,8 @@ variable "firebase_messaging_sender_id" {
   description = "The Firebase authentication sender id"
   default     = ""
 }
+
+variable "schema_validator_url" {
+  description = "The URL for the schema validator service"
+}
+
