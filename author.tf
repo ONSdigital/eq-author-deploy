@@ -54,7 +54,6 @@ data "template_file" "author" {
     FIREBASE_PROJECT_ID          = "${var.firebase_project_id}"
     FIREBASE_API_KEY             = "${var.firebase_api_key}"
     FIREBASE_MESSAGING_SENDER_ID = "${var.firebase_messaging_sender_id}"
-    SCHEMA_VALIDATOR_URL         = "${var.schema_validator_url}"
   }
 }
 

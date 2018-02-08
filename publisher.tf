@@ -44,10 +44,11 @@ data "template_file" "publisher" {
   template = "${file("${path.module}/task-definitions/publisher.json")}"
 
   vars {
-    LOG_GROUP          = "${aws_cloudwatch_log_group.publisher.name}"
-    CONTAINER_REGISTRY = "${var.docker_registry}"
-    CONTAINER_TAG      = "${var.publisher_tag}"
-    AUTHOR_API         = "https://${aws_route53_record.author-api.fqdn}"
+    LOG_GROUP            = "${aws_cloudwatch_log_group.publisher.name}"
+    CONTAINER_REGISTRY   = "${var.docker_registry}"
+    CONTAINER_TAG        = "${var.publisher_tag}"
+    AUTHOR_API           = "https://${aws_route53_record.author-api.fqdn}"
+    SCHEMA_VALIDATOR_URL = "${var.schema_validator_url}"
   }
 }
 
