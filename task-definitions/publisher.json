@@ -12,8 +12,12 @@
     ],
     "environment": [
       {
-        "name": "GRAPHQL_API_URL",
+        "name": "EQ_AUTHOR_API_URL",
         "value": "${AUTHOR_API}/graphql"
+      },
+      {
+        "name": "EQ_SCHEMA_VALIDATOR_URL",
+        "value": "${SCHEMA_VALIDATOR_URL}/validate"
       }
     ],
     "logConfiguration": {

@@ -17,5 +17,6 @@ module "author" {
   aws_alb_listener_arn    = "${module.eq-ecs.aws_alb_listener_arn}"
   application_cidrs       = "${var.application_cidrs}"
   survey_launcher_url     = "${module.survey-launcher-for-ecs.survey_runner_launcher_address}"
+  schema_validator_url    = "${module.schema-validator-for-ecs.schema_validator_address}"
 }
 ```
