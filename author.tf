@@ -35,9 +35,13 @@ resource "aws_alb_listener_rule" "author" {
 resource "aws_route53_record" "author" {
   zone_id = "${data.aws_route53_zone.dns_zone.id}"
   name    = "${var.env}-author.${var.dns_zone_name}"
-  type    = "CNAME"
-  ttl     = "60"
-  records = ["${data.aws_alb.eq.dns_name}"]
+  type    = "A"
+
+  alias {
+    name                   = "${data.aws_alb.eq.dns_name}"
+    zone_id                = "${data.aws_alb.eq.zone_id}"
+    evaluate_target_health = false
+  }
 }
 
 data "template_file" "author" {
