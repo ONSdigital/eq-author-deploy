@@ -75,7 +75,7 @@ resource "aws_ecs_service" "author" {
   name            = "${var.env}-author"
   cluster         = "${data.aws_ecs_cluster.ecs-cluster.id}"
   task_definition = "${aws_ecs_task_definition.author.family}"
-  desired_count   = "1"
+  desired_count   = "${var.author_min_tasks}"
   iam_role        = "${aws_iam_role.author.arn}"
 
   placement_strategy {
@@ -90,7 +90,7 @@ resource "aws_ecs_service" "author" {
   }
 
   lifecycle {
-    ignore_changes = ["placement_strategy"]
+    ignore_changes = ["placement_strategy", "desired_count"]
   }
 }
 

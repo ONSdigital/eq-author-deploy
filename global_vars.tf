@@ -82,3 +82,18 @@ variable "firebase_messaging_sender_id" {
 variable "schema_validator_url" {
   description = "The URL for the schema validator service"
 }
+
+variable "author_min_tasks" {
+  description = "The minimum number of Author tasks to run"
+  default     = "2"
+}
+
+variable "author_api_min_tasks" {
+  description = "The minimum number of Author API tasks to run"
+  default     = "2"
+}
+
+variable "publisher_min_tasks" {
+  description = "The minimum number of Publisher tasks to run"
+  default     = "2"
+}

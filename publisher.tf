@@ -70,7 +70,7 @@ resource "aws_ecs_service" "publisher" {
   name            = "${var.env}-publisher"
   cluster         = "${data.aws_ecs_cluster.ecs-cluster.id}"
   task_definition = "${aws_ecs_task_definition.publisher.family}"
-  desired_count   = "1"
+  desired_count   = "${var.publisher_min_tasks}"
   iam_role        = "${aws_iam_role.publisher.arn}"
 
   placement_strategy {
@@ -85,7 +85,7 @@ resource "aws_ecs_service" "publisher" {
   }
 
   lifecycle {
-    ignore_changes = ["placement_strategy"]
+    ignore_changes = ["placement_strategy", "desired_count"]
   }
 }
 
