@@ -2,7 +2,7 @@ resource "aws_alb_target_group" "author" {
   name     = "${var.env}-author"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = "${data.aws_alb.eq.vpc_id}"
+  vpc_id   = "${var.vpc_id}"
 
   health_check = {
     healthy_threshold   = 2
@@ -18,7 +18,7 @@ resource "aws_alb_target_group" "author" {
 }
 
 resource "aws_alb_listener_rule" "author" {
-  listener_arn = "${var.aws_alb_listener_arn}"
+  listener_arn = "${data.aws_lb_listener.eq.id}"
   priority     = 201
 
   action {
@@ -38,8 +38,8 @@ resource "aws_route53_record" "author" {
   type    = "A"
 
   alias {
-    name                   = "${data.aws_alb.eq.dns_name}"
-    zone_id                = "${data.aws_alb.eq.zone_id}"
+    name                   = "${data.aws_lb.eq.dns_name}"
+    zone_id                = "${data.aws_lb.eq.zone_id}"
     evaluate_target_health = false
   }
 }

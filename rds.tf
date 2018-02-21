@@ -1,7 +1,7 @@
 resource "aws_security_group" "rds_access" {
   name        = "${var.env}-rds-access-from-author"
   description = "Database access from the application subnet"
-  vpc_id      = "${data.aws_alb.eq.vpc_id}"
+  vpc_id      = "${var.vpc_id}"
 
   ingress {
     from_port   = 5432
