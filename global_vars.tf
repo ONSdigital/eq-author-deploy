@@ -10,12 +10,16 @@ variable "aws_access_key" {
   description = "Amazon Web Service Access Key"
 }
 
+variable "vpc_id" {
+  description = "The EQ VPC ID"
+}
+
 variable "ecs_cluster_name" {
   description = "The name of the survey runner ECS cluster"
 }
 
-variable "aws_alb_listener_arn" {
-  description = "The ARN of the survey runner ALB"
+variable "aws_alb_arn" {
+  description = "The ARN of the ALB"
 }
 
 # DNS
