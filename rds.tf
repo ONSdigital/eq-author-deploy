@@ -19,8 +19,9 @@ resource "aws_db_instance" "author_database" {
   allocated_storage           = 10
   identifier                  = "${var.env}-author-rds"
   engine                      = "postgres"
-  engine_version              = "9.4.7"
-  allow_major_version_upgrade = "false"
+  engine_version              = "9.4.15"
+  auto_minor_version_upgrade  = false
+  allow_major_version_upgrade = false
   instance_class              = "db.t2.small"
   name                        = "author"
   username                    = "author"
